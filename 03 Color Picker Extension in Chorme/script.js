@@ -26,22 +26,27 @@ const showColors = () => {
 }
 showColors();
 
-const activateEyeDropper = async () => {
-    try {
-        const eyeDropper = new EyeDropper();  //in build function for seelcting colors using eye Dropper
-        const { sRGBHex } = await eyeDropper.open();
-        navigator.clipboard.writeText(sRGBHex);
+const activateEyeDropper = () => {
+    document.body.style.display = "none";
+    setTimeout(async () => {
+        try {
+            const eyeDropper = new EyeDropper();  //in build function for seelcting colors using eye Dropper
+            const { sRGBHex } = await eyeDropper.open();
+            navigator.clipboard.writeText(sRGBHex);
 
-        // Adding color to the list if it doesn't already exist
-        if (!pickedColors.includes(sRGBHex)) {
-            pickedColors.push(sRGBHex);
-            localStorage.setItem("picked-colors", JSON.stringify(pickedColors));
-            showColors();
+            // Adding color to the list if it doesn't already exist
+            if (!pickedColors.includes(sRGBHex)) {
+                pickedColors.push(sRGBHex);
+                localStorage.setItem("picked-colors", JSON.stringify(pickedColors));
+                showColors();
+            }
+
+        } catch (error) {
+            console.log("Failed to copy the color code!")
         }
+        document.body.style.display = "block";
+    }, 10)
 
-    } catch (error) {
-        console.log(error)
-    }
 }
 
 // Clearing the picked colors, updating localstorage, and hiding the pickedColors element
