@@ -54,6 +54,7 @@ p {
 img {
   width: 20vw;
   height: 20vh;
+  margin-bottom: 2rem;
 }
 
 .button-wrapper {
@@ -104,7 +105,7 @@ button:last-child {
  ---------------------------------*/
 
 #gameArea {
-  height: 100vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,7 +151,7 @@ input {
 
 @media (max-width: 1200px) {
   body {
-    width: 100vw;
+    width: 40vw;
   }
   main {
     width: 50vw;
@@ -163,7 +164,7 @@ input {
 
 @media (max-width: 800px) {
   body {
-    width: 100vw;
+    width: 60vw;
   }
   main {
     width: 80vw;
@@ -171,7 +172,7 @@ input {
   }
 
   img {
-    width: 100%;
+    width: 70%;
   }
 
   #welcomeScreen h2 {
