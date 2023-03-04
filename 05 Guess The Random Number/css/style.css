@@ -23,7 +23,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
-  background-color: #491579;
+  background-color: #1192bc7a;
 }
 
 main {
@@ -105,7 +105,6 @@ button:last-child {
  ---------------------------------*/
 
 #gameArea {
-  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
