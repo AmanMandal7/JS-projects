@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Montserrat:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark: #350363;
+  --background: #ffe9db;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: #491579;
+}
+
+main {
+  width: 30vw;
+  height: auto;
+  text-align: center;
+  background-color: var(--background);
+  border: solid var(--dark);
+  border-width: 0.8rem;
+  border-radius: 1rem;
+  padding: 8rem 5rem;
+  color: #1f2933;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin: 2rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
+img {
+  width: 20vw;
+  height: 20vh;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+button {
+  min-width: 28rem;
+  background-image: linear-gradient(
+    92.88deg,
+    #e7ce51 9.16%,
+    #c1a725 43.89%,
+    #d2b004 64.72%
+  );
+  border-radius: 0.8rem;
+  border-style: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 1.5rem 4rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  text-transform: capitalize;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+button:last-child {
+  background-image: linear-gradient(
+    92.88deg,
+    #52738d 9.16%,
+    #2f638b 43.89%,
+    #1c5988 64.72%
+  );
+  transition-duration: 0.1s;
+}
+
+/*-------------------------------
+ Our Game Area  
+ ---------------------------------*/
+
+#gameArea {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#newGameButton {
+  margin: 2rem 0;
+}
+
+input {
+  border: 0.1rem solid rgb(114, 114, 114);
+  border-radius: 1rem;
+  background: transparent;
+  outline: none;
+  margin: 4rem 0;
+  padding: 2rem 0;
+  width: 25rem;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.stats {
+  text-align: left;
+  margin-bottom: 4rem;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.info span {
+  font-size: 2rem;
+  color: #ff0511;
+}
+
+/*-------------------------------
+ for responsive  
+ ---------------------------------*/
+
+@media (max-width: 1200px) {
+  body {
+    width: 100vw;
+  }
+  main {
+    width: 50vw;
+    padding: 2rem;
+  }
+  input {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    width: 100vw;
+  }
+  main {
+    width: 80vw;
+    padding: 2rem;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  #welcomeScreen h2 {
+    text-transform: capitalize;
+    font-size: 2rem;
+  }
+
+  button {
+    min-width: 20rem;
+  }
+  .button-wrapper button {
+    font-size: 1.5rem;
+  }
+  input {
+    width: 20rem;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .info span {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+  }
+}
