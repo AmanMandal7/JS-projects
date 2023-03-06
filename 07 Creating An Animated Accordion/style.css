@@ -17,7 +17,10 @@ body {
 
 .accordion {
   width: 50%;
-  margin: 200px auto 0 auto;
+  margin: 200px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .item {
@@ -32,16 +35,42 @@ body {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 20px;
   text-transform: capitalize;
 }
 
 .number {
-  font-size: 32px;
+  font-size: 25px;
 }
 
 .icon {
   width: 24px;
   height: 24px;
   color: #1864ab;
+}
+
+.hidden-box {
+  grid-column: 2/3;
+  display: none;
+}
+
+.hidden-box p {
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  word-spacing: 3px;
+}
+
+.hidden-box ul li {
+  margin-left: 16px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  word-spacing: 3px;
+}
+
+.active .hidden-box {
+  display: block;
 }
