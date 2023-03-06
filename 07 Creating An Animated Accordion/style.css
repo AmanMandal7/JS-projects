@@ -17,7 +17,7 @@ body {
 
 .accordion {
   width: 50%;
-  margin: 200px auto;
+  margin: 150px auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -29,7 +29,7 @@ body {
   grid-template-columns: auto 1fr auto;
   gap: 30px;
   align-items: center;
-  padding: 30px;
+  padding: 24px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -69,6 +69,29 @@ h2 {
   font-size: 17px;
   letter-spacing: 0.5px;
   word-spacing: 3px;
+}
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 1.5px solid #1864ab;
+  animation: borderline 1s linear forwards;
+}
+
+@keyframes borderline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .active .hidden-box {
