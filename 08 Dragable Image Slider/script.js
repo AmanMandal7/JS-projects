@@ -2,7 +2,7 @@ const carousel = document.querySelector(".carousel");
 const arrowIcons = document.querySelectorAll(".wrapper i");
 const firstImg = carousel.querySelectorAll("img")[0];
 
-let isDragStart = false, prevPageX, prevScrollLeft;
+let isDragStart = false, prevPageX, isDragging = false, prevScrollLeft, positionDiff;
 
 
 const showHideIcons = () => {
@@ -18,7 +18,25 @@ arrowIcons.forEach(icon => {
         carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
         setTimeout(() => showHideIcons(), 50) // Calling showHideIcons every 50ms
     })
-})
+});
+
+const autoSlide = () => {
+
+    // if there is no image left to scroll then return from here
+    if (carousel.scrollLeft == (carousel.scrollWidth - carousel.clientWidth)) return;
+
+    positionDiff = Math.abs(positionDiff); // making the positionDiff value to positive
+    let firstImgWidth = firstImg.clientWidth + 14;
+    // getting difference that needs to add or reduce from carousel left to take middle image to center
+    let valDifference = firstImgWidth - positionDiff;
+
+    if (carousel.scrollLeft > prevScrollLeft) {
+        // if user is scrolling to the right
+        return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    }
+    // if user is scrolling to the left
+    carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+}
 
 const dragStart = (e) => {
     // updating global varialbes values on mouse down button
@@ -30,8 +48,9 @@ const dragStart = (e) => {
 const dragging = (e) => {
     if (!isDragStart) return;
     e.preventDefault();
+    isDragging = true;
     carousel.classList.add("dragging");
-    let positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
     carousel.scrollLeft = prevScrollLeft - positionDiff;
     showHideIcons();
 }
@@ -39,6 +58,10 @@ const dragging = (e) => {
 const dragStop = () => {
     isDragStart = false;
     carousel.classList.remove("dragging");
+
+    if (!isDragging) return;
+    isDragging = false;
+    autoSlide();
 }
 
 carousel.addEventListener("mousedown", dragStart);
