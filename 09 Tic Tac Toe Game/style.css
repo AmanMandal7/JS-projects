@@ -33,6 +33,7 @@ nav li {
   grid-template-rows: repeat(3, 10vw);
   grid-template-columns: repeat(3, 10vw);
   font-family: "Fredoka One", cursive;
+  position: relative;
 }
 
 .box {
@@ -95,7 +96,18 @@ img {
   font-weight: bolder;
 }
 
-@media screen and (max-width: 800px) {
+.line {
+  background-color: black;
+  width: 0;
+  height: 3px;
+  border-radius: 5px;
+  position: absolute;
+  background-color: #af2faf;
+  transition: width 1s ease-in-out;
+  /* transform: translate(5vw, 15vw) rotate(90deg); */
+}
+
+@media screen and (max-width: 400px) {
   .gameContainer {
     flex-wrap: wrap;
   }
@@ -109,7 +121,12 @@ img {
   }
 
   .container {
-    grid-template-rows: repeat(3, 15vw);
-    grid-template-columns: repeat(3, 15vw);
+    grid-template-rows: repeat(3, 20vw);
+    grid-template-columns: repeat(3, 20vw);
+  }
+
+  .line {
+    width: 40vw;
+    transform: translate(10vw, 30vw) rotate(90deg);
   }
 }
