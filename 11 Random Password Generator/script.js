@@ -1,7 +1,9 @@
 const lenghtSlider = document.querySelector(".pass-length input");
 const options = document.querySelectorAll(".option input");
 let passwordInput = document.querySelector(".input-box input");
+const passIndicator = document.querySelector(".pass-indicator");
 const generateBtn = document.querySelector(".generate-btn");
+const copyIcon = document.querySelector(".input-box span")
 
 const characters = {  //object of letters, numbers and symbols
     lowercase: "abcdefghijklmnopqrstuvwxyz",
@@ -44,12 +46,25 @@ const generatePassword = () => {
     passwordInput.value = randomPassword;
 }
 
+const updatePassIndicator = () => {
+    passIndicator.id = lenghtSlider.value <= 8 ? "weak" : lenghtSlider.value <= 16 ? "medium" : "strong";
+}
+
 const updateSlider = () => {
     document.querySelector(".pass-length span").innerText = lenghtSlider.value;
     generatePassword();
+    updatePassIndicator();
 }
 updateSlider();
 
+const copyPassword = () => {
+    navigator.clipboard.writeText(passwordInput.value);
+    copyIcon.innerText = "check";
+    setTimeout(() => {
+        copyIcon.innerText = "copy_all";
+    }, 1500)
+}
 
 lenghtSlider.addEventListener("input", updateSlider);
 generateBtn.addEventListener("click", generatePassword);
+copyIcon.addEventListener("click", copyPassword);
