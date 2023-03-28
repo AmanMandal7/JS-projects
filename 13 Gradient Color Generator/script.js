@@ -2,7 +2,8 @@ const colorInputs = document.querySelectorAll(".inputs input");
 const gradientBox = document.querySelector(".gradient-box");
 const selectMenu = document.querySelector(".select-box select");
 const textarea = document.querySelector("textarea");
-const refreshBtn = document.querySelector(".refresh")
+const refreshBtn = document.querySelector(".refresh");
+const copyBtn = document.querySelector(".copy");
 
 
 const getRandomColor = () => {
@@ -26,8 +27,15 @@ const generateGradient = (isRandom) => {
 
 colorInputs.forEach(input => {
     // calling generateGradient function on each color input clicks
-    input.addEventListener("input", generateGradient);
+    input.addEventListener("input", () => generateGradient(false));
 });
 
-selectMenu.addEventListener("change", generateGradient);
+const copyCode = () => {
+    navigator.clipboard.writeText(textarea.value);
+    copyBtn.innerText = "Code Copied";
+    setTimeout(() => copyBtn.innerText = "Copy Code", 1600);
+}
+
+selectMenu.addEventListener("change", () => generateGradient(false));
 refreshBtn.addEventListener("click", () => generateGradient(true));
+copyBtn.addEventListener("click", copyCode);
