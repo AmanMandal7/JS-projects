@@ -23,7 +23,13 @@ const drawRect = (e) => {
     return ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
 }
 
-
+const drawCircle = (e) => {
+    ctx.beginPath(); // creating new path to draw circle
+    // getting radius of the cirlce according to mouse pointer
+    let radius = Math.sqrt(Math.pow((prevMouseX - e.offsetX), 2) + Math.pow((prevMouseY - e.offsetY), 2));
+    ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI); // it takes (x-cordinate, y-cordinate, radius, start angle, end angle)
+    fillColor.checked ? ctx.fill() : ctx.stroke();
+}
 
 const startDraw = (e) => {
     isDrawing = true;
@@ -45,7 +51,7 @@ const drawing = (e) => {
     } else if (selectedTool === "rectangle") {
         drawRect(e);
     } else if (selectedTool === "circle") {
-
+        drawCircle(e);
     }
 
 }
