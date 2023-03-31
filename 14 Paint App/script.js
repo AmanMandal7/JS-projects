@@ -5,6 +5,7 @@ const sizeSlider = document.querySelector("#size-slider");
 const colorBtns = document.querySelectorAll(".colors .option");
 const colorPicker = document.querySelector("#color-picker");
 const clearCanvas = document.querySelector(".clear-canvas");
+const saveImg = document.querySelector(".save-img");
 ctx = canvas.getContext("2d");
 
 // global variables with default value
@@ -14,10 +15,18 @@ selectedTool = "brush";
 let brushWidth = 5;
 let selectedColor = "#000";
 
+const setCanvasBackground = () => {
+    // setting whole canvas background to white, so the download image background will be white
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = selectedColor; // setting fillStyle back to the selectedColor, it'll be the brush color
+}
+
 window.addEventListener("load", () => {
     // setting canvas width/height.. offsetwidth/height returns viewable width/height of an element
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
+    setCanvasBackground();
 });
 
 const drawRect = (e) => {
@@ -103,6 +112,14 @@ colorPicker.addEventListener("change", () => {
 
 clearCanvas.addEventListener("click", () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);  // clearing whole canvas
+    setCanvasBackground();
+});
+
+saveImg.addEventListener("click", () => {
+    const link = document.createElement("a"); // creating <a> element
+    link.download = `${Date.now()}.jpg`; // passing current date as link download value
+    link.href = canvas.toDataURL(); // passing canvasData as link href value
+    link.click(); // clicking link to download image
 })
 
 sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value); // passing slider value as brush width
