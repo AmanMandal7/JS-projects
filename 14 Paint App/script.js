@@ -60,7 +60,8 @@ const drawing = (e) => {
     if (!isDrawing) return; // if isDrawing is false return from here
     ctx.putImageData(snapshot, 0, 0); // adding copied canvas data on to this canvas
 
-    if (selectedTool === "brush") {
+    if (selectedTool === "brush" || selectedTool === "eraser") {
+        ctx.strokeStyle = selectedTool === "eraser" ? "#fff" : selectedColor;
         ctx.lineTo(e.offsetX, e.offsetY); // this method creates a new line according to the mouse pointer
         ctx.stroke(); // drawing/filling line with color
     } else if (selectedTool === "rectangle") {
