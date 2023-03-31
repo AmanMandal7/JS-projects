@@ -4,6 +4,7 @@ const fillColor = document.querySelector("#fill-color");
 const sizeSlider = document.querySelector("#size-slider");
 const colorBtns = document.querySelectorAll(".colors .option");
 const colorPicker = document.querySelector("#color-picker");
+const clearCanvas = document.querySelector(".clear-canvas");
 ctx = canvas.getContext("2d");
 
 // global variables with default value
@@ -98,6 +99,10 @@ colorBtns.forEach(btn => {
 colorPicker.addEventListener("change", () => {
     colorPicker.parentElement.style.background = colorPicker.value;
     colorPicker.parentElement.click();
+});
+
+clearCanvas.addEventListener("click", () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);  // clearing whole canvas
 })
 
 sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value); // passing slider value as brush width
