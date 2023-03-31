@@ -44,6 +44,8 @@ const drawing = (e) => {
         ctx.stroke(); // drawing/filling line with color
     } else if (selectedTool === "rectangle") {
         drawRect(e);
+    } else if (selectedTool === "circle") {
+
     }
 
 }
