@@ -12,11 +12,14 @@ function fetchRequest(formData, file) {
         method: "POST", body: formData
     }).then(res => res.json()).then(result => {
         result = result[0].symbol[0].data;
+        infoText.innerText = result ? "Upload QR Code to scan" : "Couldn't scan QR Code";
+        if (!result) return;
         wrapper.querySelector("textarea").innerText = result;
         form.querySelector("img").src = URL.createObjectURL(file);
-        infoText.innerText = "Upload QR Code to scan";
         wrapper.classList.add("active");
-    });
+    }).catch(() => {
+        infoText.innerText = "Couldn't scan QR Code";
+    })
 }
 
 copyBtn.addEventListener("click", () => {
@@ -26,6 +29,7 @@ copyBtn.addEventListener("click", () => {
 
 fileInp.addEventListener("change", e => {
     let file = e.target.files[0]; // getting user selected file
+    if (!file) return;
     let formData = new FormData(); // creating a new FormData object
     formData.append("file", file); // adding selected file to formData
     fetchRequest(formData, file);
