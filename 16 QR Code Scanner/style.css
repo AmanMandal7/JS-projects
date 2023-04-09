@@ -16,20 +16,33 @@ body {
 }
 
 .wrapper {
+  height: 270px;
   background: #0b8;
   width: 420px;
   padding: 30px 30px 35px;
   border-radius: 7px;
+  transition: height 0.3s ease;
+}
+
+.wrapper.active {
+  height: 525px;
 }
 
 .wrapper form {
-  height: 225px;
+  height: 210px;
+  cursor: pointer;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 7px;
   text-align: center;
+  transition: height 0.3s ease;
+}
+
+.wrapper.active form {
+  height: 225px;
+  pointer-events: none;
 }
 
 form img {
@@ -37,8 +50,12 @@ form img {
   max-width: 148px;
 }
 
-form .content {
-  /* display: none; */
+.wrapper.active form img {
+  display: block;
+}
+
+.wrapper.active form .content {
+  display: none;
 }
 
 form .content i {
@@ -54,6 +71,14 @@ form .content p {
 
 .wrapper .details {
   margin-top: 25px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wrapper.active .details {
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
 }
 
 .details textarea {
