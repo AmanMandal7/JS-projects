@@ -37,3 +37,43 @@ body {
   border-radius: 5px;
   border: 1px solid #999;
 }
+
+.pass-field i {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.wrapper .content {
+  margin: 20px 0 10px;
+}
+
+.content p {
+  font-size: 1.3rem;
+}
+
+.content .requirement-list {
+  margin-top: 20px;
+}
+
+.requirement-list li {
+  list-style: none;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.requirement-list li i {
+  font-size: 0.6rem;
+  color: #999;
+  width: 20px;
+}
+
+.requirement-list li span {
+  margin-left: 12px;
+}
