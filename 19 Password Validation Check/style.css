@@ -74,6 +74,15 @@ body {
   width: 20px;
 }
 
+.requirement-list li.valid i {
+  font-size: 1.3rem;
+  color: #4285f4;
+}
+
 .requirement-list li span {
   margin-left: 12px;
+}
+
+.requirement-list li.valid span {
+  color: #999;
 }
