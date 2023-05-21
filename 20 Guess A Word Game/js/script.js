@@ -11,7 +11,6 @@ function randomWord() {
     let ranObj = wordList[Math.floor(Math.random() * wordList.length)];
     word = ranObj.word;
     maxGuesses = 8; incorrects = []; corrects = [];
-    console.log(word);
 
     hint.innerText = ranObj.hint;
     guessesLeft.innerText = maxGuesses;
@@ -29,12 +28,12 @@ randomWord();
 function initGame(e) {
     let key = e.target.value;
     if (key.match(/^[A-Za-z]+$/) && !incorrects.includes(` ${key}`) && !corrects.includes(key)) {
-        console.log(key);
         if (word.includes(key)) { // if user letter found in the word
             for (let i = 0; i < word.length; i++) {
                 // showing matched letter input value
                 if (word[i] === key) {
                     inputs.querySelectorAll("input")[i].value = key;
+                    corrects.push(key);
                 }
             }
         } else {
@@ -48,13 +47,18 @@ function initGame(e) {
 
     typingInput.value = "";
 
-    if (maxGuesses < 1) { // if user couldn't found all letters
-        alert("Game Over! You don't have remaining guesses.")
-        for (let i = 0; i < word.length; i++) {
-            // show all letters in the input
-            inputs.querySelectorAll("input")[i].value = word[i];
+    setTimeout(() => {
+        if (corrects.length === word.length) { // if user found all words
+            alert(`Congo! You guessed the word ${word.toUpperCase()}`);
+            randomWord();
+        } else if (maxGuesses < 1) { // if user couldn't found all letters
+            alert("Game Over! You don't have remaining guesses.")
+            for (let i = 0; i < word.length; i++) {
+                // show all letters in the input
+                inputs.querySelectorAll("input")[i].value = word[i];
+            }
         }
-    }
+    })
 }
 
 resetBtn.addEventListener("click", randomWord);
