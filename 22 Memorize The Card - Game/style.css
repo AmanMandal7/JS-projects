@@ -54,7 +54,7 @@ body {
   position: absolute;
   border-radius: 7px;
   backface-visibility: hidden;
-  transition: transform 0.05s linear;
+  transition: transform 0.25s linear;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -68,11 +68,11 @@ body {
 }
 
 .card .back-view {
-  transform: rotateY(-90deg);
+  transform: rotateY(-180deg);
 }
 
 .card:hover .front-view {
-  transform: rotateY(90deg);
+  transform: rotateY(180deg);
 }
 
 .card:hover .back-view {
