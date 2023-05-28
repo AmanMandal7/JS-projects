@@ -52,6 +52,8 @@ body {
   height: 100%;
   background: #fff;
   position: absolute;
+  user-select: none;
+  pointer-events: none;
   border-radius: 7px;
   backface-visibility: hidden;
   transition: transform 0.25s linear;
@@ -71,10 +73,10 @@ body {
   transform: rotateY(-180deg);
 }
 
-.card:hover .front-view {
+.card.flip .front-view {
   transform: rotateY(180deg);
 }
 
-.card:hover .back-view {
+.card.flip .back-view {
   transform: rotateY(0);
 }
