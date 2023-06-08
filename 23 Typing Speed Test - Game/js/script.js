@@ -22,6 +22,10 @@ function initTyping() {
         characters[charIndex].classList.add("incorrect");
     }
     charIndex++;
+    characters.forEach(span => span.classList.remove("active"));
+    characters[charIndex].classList.add("active");
+
+
 }
 
 randomParagraph();
