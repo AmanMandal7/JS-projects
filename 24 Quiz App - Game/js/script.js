@@ -35,6 +35,11 @@ let timeValue = 15;
 let widthValue = 0;
 
 const next_btn = document.querySelector(".next_btn");
+const result_box = document.querySelector(".result_box");
+const restart_quiz = result_box.querySelector(".buttons restart");
+const quit_quiz = result_box.querySelector(".buttons .quit");
+
+
 //if Next Button clicked
 next_btn.onclick = () => {
     if (que_count < questions.length - 1) {
@@ -46,8 +51,10 @@ next_btn.onclick = () => {
         startTimer(timeValue);
         clearInterval(counterLine);
         startTimerLine(widthValue);
+        next_btn.style.display = "none";
     } else {
         console.log("Questions Completed");
+        showResultBox();
     }
 }
 
@@ -100,6 +107,7 @@ function optionSelected(answer) {
     for (let i = 0; i < all_options; i++) {
         option_list.children[i].classList.add("disabled");
     }
+    next_btn.style.display = "block";
 
 }
 
@@ -117,6 +125,11 @@ function startTimer(time) {
             timeCount.textContent = "00";
         }
     }
+}
+
+function showResultBox() {
+    result_box.classList.add("activeResult");
+    quiz_box.classList.remove("activeQuiz");
 }
 
 function startTimerLine(time) {
