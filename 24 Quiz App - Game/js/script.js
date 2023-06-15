@@ -7,6 +7,7 @@ const quiz_box = document.querySelector(".quiz_box");
 const option_list = document.querySelector(".option_list");
 const timeCount = quiz_box.querySelector(".timer .time_sec");
 const timeLine = quiz_box.querySelector(".time_line");
+const timeOff = quiz_box.querySelector(".time_text");
 
 //if start quiz button clicked
 start_btn.onclick = () => {
@@ -31,14 +32,37 @@ continue_btn.onclick = () => {
 let que_count = 0;
 let que_numb = 1;
 let counter;
+let counterLine;
 let timeValue = 15;
 let widthValue = 0;
+let userScore = 0;
 
 const next_btn = document.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
-const restart_quiz = result_box.querySelector(".buttons restart");
+const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
+restart_quiz.onclick = () => {
+    quiz_box.classList.add("activeQuiz");
+    result_box.classList.remove("activeResult");
+    que_count = 0;
+    que_numb = 1;
+    timeValue = 15;
+    widthValue = 0;
+    userScore = 0;
+    showQuestions(que_count);
+    queCounter(que_numb);
+    clearInterval(counter);
+    startTimer(timeValue);
+    clearInterval(counterLine);
+    startTimerLine(widthValue);
+    next_btn.style.display = "none";
+    timeOff.textContent = "Time Left";
+}
+
+quit_quiz.onclick = () => {
+    window.location.reload();
+}
 
 //if Next Button clicked
 next_btn.onclick = () => {
@@ -52,7 +76,10 @@ next_btn.onclick = () => {
         clearInterval(counterLine);
         startTimerLine(widthValue);
         next_btn.style.display = "none";
+        timeOff.textContent = "Time Left";
     } else {
+        clearInterval(counter);
+        clearInterval(counterLine);
         console.log("Questions Completed");
         showResultBox();
     }
@@ -86,6 +113,8 @@ function optionSelected(answer) {
     let correctAns = questions[que_count].answer;
     let all_options = option_list.children.length;
     if (userAns == correctAns) {
+        userScore += 1;
+        console.log(userScore);
         answer.classList.add("correct");
         console.log("Answer is correct");
         answer.insertAdjacentHTML("beforeend", tickIcon);
@@ -121,8 +150,24 @@ function startTimer(time) {
             timeCount.textContent = "0" + addZero;
         }
         if (time < 0) {
+            timeOff.textContent = "Time Off";
             clearInterval(counter);
             timeCount.textContent = "00";
+
+            let correctAns = questions[que_count].answer;
+            let all_options = option_list.children.length;
+
+            for (let i = 0; i < all_options; i++) {
+                if (option_list.children[i].textContent == correctAns) {
+                    option_list.children[i].setAttribute("class", "option correct");
+                    option_list.children[i].insertAdjacentHTML("beforeend", tickIcon);
+                }
+            }
+
+            for (let i = 0; i < all_options; i++) {
+                option_list.children[i].classList.add("disabled");
+            }
+            next_btn.style.display = "block";
         }
     }
 }
@@ -130,6 +175,19 @@ function startTimer(time) {
 function showResultBox() {
     result_box.classList.add("activeResult");
     quiz_box.classList.remove("activeQuiz");
+    const scoreText = document.querySelector(".score_text");
+    if (userScore > 3) {
+        let scoreTag = '<span> and congrats! you got <p>' + userScore + '</p>out of<p>' + questions.length + '</p></span>'
+        scoreText.innerHTML = scoreTag;
+    }
+    else if (userScore > 1) {
+        let scoreTag = '<span> and nice, you got <p>' + userScore + '</p>out of<p>' + questions.length + '</p></span>'
+        scoreText.innerHTML = scoreTag;
+    }
+    else {
+        let scoreTag = '<span> and sorry, you got only<p>' + userScore + '</p>out of<p>' + questions.length + '</p></span>'
+        scoreText.innerHTML = scoreTag;
+    }
 }
 
 function startTimerLine(time) {
@@ -137,7 +195,7 @@ function startTimerLine(time) {
     function timer() {
         time += 1;
         timeLine.style.width = time + "px";
-        if (time > 560) {
+        if (time > 550) {
             clearInterval(counterLine);
         }
     }
