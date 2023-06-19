@@ -9,11 +9,15 @@ const checkBtn = document.querySelector(".check-word");
 let correctWord, timer;
 
 const initTimer = (maxTime) => {
+    clearInterval(timer);
     timer = setInterval(() => {
         if (maxTime > 0) {
             maxTime--;
-            timeField.innerText = maxTime;
+            return timeField.innerText = maxTime;
         }
+        clearInterval(timer);
+        alert(`Time Off! ${correctWord.toUpperCase()} was the correct word`);
+        initGame();
     }, 1000)
 }
 
@@ -30,7 +34,7 @@ const initGame = () => {
     correctWord = randomObj.word.toLowerCase();
     inputField.value = "";
     inputField.setAttribute("maxlength", correctWord.length);
-    console.log(randomObj);
+    // console.log(randomObj); 
 };
 
 initGame();
