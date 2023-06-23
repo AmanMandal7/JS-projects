@@ -121,6 +121,15 @@ header .logo {
   padding: 40px;
 }
 
+.wrapper .form-box.login {
+  /* display: none; */
+}
+
+.wrapper .form-box.register {
+  position: absolute;
+  transform: translateX(400px);
+}
+
 .form-box h2 {
   font-size: 2em;
   color: #162938;
@@ -182,9 +191,15 @@ header .logo {
   justify-content: space-between;
 }
 
+.remember-forgot label {
+  cursor: pointer;
+  user-select: none;
+}
+
 .remember-forgot label input {
   accent-color: #162938;
   margin-right: 3px;
+  cursor: pointer;
 }
 
 .remember-forgot a {
