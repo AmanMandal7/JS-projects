@@ -14,12 +14,14 @@
           <h2 class="nav_logo"><a href="#">CodingNepal</a></h2>
 
           <ul class="menu_items">
+            <img src="images/times.svg" alt="timesicon" id="menu_toggler" />
             <li><a href="#" class="nav_link">Home</a></li>
             <li><a href="#" class="nav_link">About</a></li>
             <li><a href="#" class="nav_link">Service</a></li>
             <li><a href="#" class="nav_link">Project</a></li>
             <li><a href="#" class="nav_link">Contact</a></li>
           </ul>
+          <img src="images/bars.svg" alt="timesicon" id="menu_toggler" />
         </nav>
       </header>
 
@@ -48,5 +50,16 @@
         </div>
       </section>
     </main>
+
+    <script>
+      const header = document.querySelector("header");
+      const menuToggle = document.querySelectorAll("#menu_toggler");
+
+      menuToggle.forEach((toggler) => {
+        toggler.addEventListener("click", () =>
+          header.classList.toggle("showMenu")
+        );
+      });
+    </script>
   </body>
 </html>

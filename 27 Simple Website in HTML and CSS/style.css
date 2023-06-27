@@ -112,3 +112,72 @@ a {
 .hero_img {
   width: 100%;
 }
+
+#menu_toggler {
+  display: none;
+}
+
+/* Responsive  */
+@media (width < 860px) {
+  .nav {
+    padding: 0 20px;
+    background-color: #fff;
+  }
+  .menu_items {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 50px 30px 30px;
+    transition: all 0.5s ease;
+  }
+  .showMenu .menu_items {
+    left: 0;
+  }
+  a {
+    color: #333;
+  }
+  #menu_toggler {
+    display: block;
+    width: 20px;
+    cursor: pointer;
+  }
+
+  .menu_items #menu_toggler {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .hero {
+    padding-top: 140px;
+  }
+
+  .hero .row {
+    flex-direction: column;
+    padding: 0 20px;
+    justify-content: center;
+  }
+
+  .hero .row .column {
+    width: 100%;
+  }
+}
+
+@media (width < 650px) {
+  .hero {
+    padding-top: 100px;
+  }
+  .hero .row h2 {
+    font-size: 26px;
+  }
+  .buttons {
+    justify-content: center;
+  }
+  .btn {
+    padding: 10px 16px;
+  }
+}
