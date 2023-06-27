@@ -79,3 +79,32 @@ span.material-symbols-rounded {
   user-select: none;
   cursor: pointer;
 }
+
+.typing-animation {
+  display: flex;
+  padding-left: 25px;
+}
+
+.chat .typing-animation .typing-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--text-color);
+  border-radius: 50%;
+  opacity: 0.7;
+  margin: 0 3px;
+  animation: animateDots 1.5s var(--delay) ease-in-out infinite;
+}
+
+@keyframes animateDots {
+  0% {
+    transform: translateY(0px);
+  }
+  22% {
+    opacity: 0.4;
+    transform: translateY(-6px);
+  }
+  44% {
+    opacity: 0.2;
+    transform: translateY(0px);
+  }
+}
