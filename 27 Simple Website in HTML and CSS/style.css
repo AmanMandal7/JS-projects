@@ -50,5 +50,65 @@ a {
 .hero {
   min-height: 100vh;
   width: 100%;
-  /* background: red; */
+  background: url(images/bg-dot.png), url(images/bg-dot.png),
+    url(images/bg-round.png), url(images/bg-tree.png),
+    url(images/bg-bottom-hero.png);
+  background-position: 10px 10px, bottom 190px right 10px, left 55% top -1%,
+    left 45% bottom -1px, center bottom -1px;
+  background-repeat: no-repeat;
+}
+
+.hero .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 60px;
+  gap: 30px;
+}
+
+.hero .row h2,
+.hero .row p {
+  color: #fff;
+}
+
+.hero .row h2 {
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+
+.hero .column {
+  width: 50%;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 25px;
+  gap: 10px;
+}
+
+.btn {
+  padding: 14px 26px;
+  border-radius: 50px;
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:last-child {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.btn:last-child:hover {
+  background: #fff;
+  color: #333;
+}
+
+.hero_img {
+  width: 100%;
 }
