@@ -7,6 +7,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+main {
+  background: #6610f2;
+}
+
 .container {
   max-width: 1300px;
   width: 100%;
@@ -21,18 +25,30 @@ header {
 }
 
 .nav {
-  background: red;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 60px;
 }
 
+.nav_logo {
+  padding: 10px 0;
+}
+
 .menu_items {
   display: flex;
   list-style: none;
+  gap: 20px;
 }
 
 a {
+  color: #fff;
   text-decoration: none;
+}
+
+/* Hero  */
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  /* background: red; */
 }
