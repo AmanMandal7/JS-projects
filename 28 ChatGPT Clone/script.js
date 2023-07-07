@@ -43,6 +43,13 @@ const getChatResponse = async (incomingChatDiv) => {
     incomingChatDiv.querySelector(".chat-details").appendChild(pElement);
 }
 
+const copyResponse = (copyBtn) => {
+    const responseTextElement = copyBtn.parentElement.querySelector("p");
+    navigator.clipboard.writeText(responseTextElement.textContent);
+    copyBtn.textContent = "done";
+    setTimeout(() => copyBtn.textContent = "content_copy", 1000);
+}
+
 const showTypingAnimation = () => {
     const html = `<div class="chat-content">
           <div class="chat-details">
@@ -53,7 +60,7 @@ const showTypingAnimation = () => {
               <div class="typing-dot" style="--delay: 0.4s"></div>
             </div>
           </div>
-          <span class="material-symbols-rounded"> content_copy </span>
+          <span onClick="copyResponse(this)" class="material-symbols-rounded"> content_copy </span>
         </div>`
 
     const incomingChatDiv = createElement(html, "incoming");
