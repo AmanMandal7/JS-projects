@@ -5,6 +5,11 @@ const chatContainer = document.querySelector(".chat-container");
 let userText = null;
 const API_KEY = "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";
 
+const loadDataFromLocalStorage = () => {
+    chatContainer.innerHTML = localStorage.getItem("all-chats");
+}
+loadDataFromLocalStorage();
+
 const createElement = (html, className) => {
     const chatDiv = document.createElement("div");
     chatDiv.classList.add("chat", className);
@@ -41,6 +46,7 @@ const getChatResponse = async (incomingChatDiv) => {
 
     incomingChatDiv.querySelector(".typing-animation").remove();
     incomingChatDiv.querySelector(".chat-details").appendChild(pElement);
+    localStorage.setItem("all-chats", chatContainer.innerHTML);
 }
 
 const copyResponse = (copyBtn) => {
