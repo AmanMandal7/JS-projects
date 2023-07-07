@@ -2,6 +2,7 @@ const chatInput = document.querySelector("#chat-input");
 const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
 const themeButton = document.querySelector("#theme-btn");
+const deleteButton = document.querySelector("#delete-btn");
 
 let userText = null;
 const API_KEY = "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";
@@ -12,7 +13,12 @@ const loadDataFromLocalStorage = () => {
     document.body.classList.toggle("light-mode", themeColor === "light_mode");
     themeButton.innerText = document.body.classList.contains("light-mode") ? "dark_mode" : "light_mode";
 
-    chatContainer.innerHTML = localStorage.getItem("all-chats");
+    const defaultText = `<div class="default-text">
+                            <h1>ChatGPT Clone</h1>
+                            <p>Start a conversation and explore the power of AI. <br> Your chat history will be displayed here.</p>
+                        </div>`
+
+    chatContainer.innerHTML = localStorage.getItem("all-chats") || defaultText;
     chatContainer.scrollTo(0, chatContainer.scrollHeight);
 }
 loadDataFromLocalStorage();
@@ -97,6 +103,7 @@ const handleOutgoingChat = () => {
     const outgoingChatDiv = createElement(html, "outgoing");
     outgoingChatDiv.querySelector("p").textContent = userText;
     chatContainer.appendChild(outgoingChatDiv);
+    document.querySelector(".default-text")?.remove();
     chatContainer.scrollTo(0, chatContainer.scrollHeight);
     setTimeout(showTypingAnimation, 500);
 }
@@ -105,6 +112,13 @@ themeButton.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
     localStorage.setItem("theme-color", themeButton.innerText);
     themeButton.innerText = document.body.classList.contains("light-mode") ? "dark_mode" : "light_mode";
+})
+
+deleteButton.addEventListener("click", () => {
+    if (confirm("Are you sure you want to delete all the chats?")) {
+        localStorage.removeItem("all-chats");
+        loadDataFromLocalStorage();
+    }
 })
 sendButton.addEventListener("click", handleOutgoingChat);
 
