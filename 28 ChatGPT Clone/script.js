@@ -1,11 +1,17 @@
 const chatInput = document.querySelector("#chat-input");
 const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
+const themeButton = document.querySelector("#theme-btn");
 
 let userText = null;
 const API_KEY = "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";
 
 const loadDataFromLocalStorage = () => {
+    const themeColor = localStorage.getItem("theme-color");
+
+    document.body.classList.toggle("light-mode", themeColor === "light_mode");
+    themeButton.innerText = document.body.classList.contains("light-mode") ? "dark_mode" : "light_mode";
+
     chatContainer.innerHTML = localStorage.getItem("all-chats");
 }
 loadDataFromLocalStorage();
@@ -91,5 +97,10 @@ const handleOutgoingChat = () => {
     setTimeout(showTypingAnimation, 500);
 }
 
+themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    localStorage.setItem("theme-color", themeButton.innerText);
+    themeButton.innerText = document.body.classList.contains("light-mode") ? "dark_mode" : "light_mode";
+})
 sendButton.addEventListener("click", handleOutgoingChat);
 
