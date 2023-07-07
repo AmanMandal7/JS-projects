@@ -6,6 +6,7 @@ const deleteButton = document.querySelector("#delete-btn");
 
 let userText = null;
 const API_KEY = "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";
+const initialHeight = chatInput.scrollHeight;
 
 const loadDataFromLocalStorage = () => {
     const themeColor = localStorage.getItem("theme-color");
@@ -54,7 +55,8 @@ const getChatResponse = async (incomingChatDiv) => {
         const response = await (await fetch(API_URL, requestOptions)).json();
         pElement.textContent = response.choices[0].text.trim();
     } catch (error) {
-        console.log(error);
+        pElement.classList.add("error");
+        pElement.textContent = "Oops! Something went wrong while retrieving the response. Pleas try again."
     }
 
     incomingChatDiv.querySelector(".typing-animation").remove();
@@ -93,6 +95,9 @@ const handleOutgoingChat = () => {
     userText = chatInput.value.trim(); // get chatInput value and remove extra spaces
     if (!userText) return; // If chatInput is empty return from here
 
+    chatInput.value = "";
+    chatInput.style.height = `${initialHeight}px`;
+
     const html = `<div class="chat-content">
           <div class="chat-details">
             <img src="images/user.jpg" alt="user-img" />
@@ -120,5 +125,20 @@ deleteButton.addEventListener("click", () => {
         loadDataFromLocalStorage();
     }
 })
+
+chatInput.addEventListener("input", () => {
+    chatInput.style.height = `${initialHeight}px`;
+    chatInput.style.height = `${chatInput.scrollHeight}px`;
+
+
+});
+
+chatInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+        e.preventDefault();
+        handleOutgoingChat();
+    }
+})
+
 sendButton.addEventListener("click", handleOutgoingChat);
 
