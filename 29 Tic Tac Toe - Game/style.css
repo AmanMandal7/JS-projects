@@ -11,11 +11,16 @@ body {
   background: #56baed;
 }
 
-.select-box {
+.select-box,
+.play-board {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Styling Select-box section  */
+.select-box {
   background: #fff;
   padding: 20px 25px 25px;
   border-radius: 5px;
@@ -59,4 +64,68 @@ body {
 
 .options button:hover {
   transform: scale(0.96);
+}
+
+/* Styling Play-board section  */
+
+.play-board .details {
+  background: #fff;
+  border-radius: 5px;
+  padding: 7px;
+}
+
+.play-board .players {
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: space-between;
+}
+
+.play-board .details span {
+  width: 100%;
+  color: #56baed;
+  border-radius: 5px;
+  padding: 7px 0;
+  font-size: 19px;
+  font-weight: 500;
+  cursor: default;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.details span:first-child {
+  color: #fff;
+}
+
+.details .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: #56baed;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.play-board .play-area {
+  margin-top: 20px;
+}
+
+.play-board section {
+  display: flex;
+}
+
+.play-board section span {
+  display: block;
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  margin: 2px;
+  border-radius: 5px;
+  font-size: 40px;
+  text-align: center;
+  line-height: 80px;
+  color: #56baed;
 }
