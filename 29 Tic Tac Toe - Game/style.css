@@ -68,6 +68,10 @@ body {
 
 /* Styling Play-board section  */
 
+.play-board {
+  display: none;
+}
+
 .play-board .details {
   background: #fff;
   border-radius: 5px;
