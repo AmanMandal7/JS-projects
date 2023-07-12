@@ -24,8 +24,8 @@ window.onload = () => {
 let playerXIcon = "fas fa-times";
 let playerOIcon = "fas fa-circle";
 
-function clickedBox(element) {
-    if () {
+// function clickedBox(element) {
+//     if () {
 
-    }
-}
+//     }
+// }
