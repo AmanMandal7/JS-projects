@@ -18,6 +18,7 @@ window.onload = () => {
     selectOBtn.onclick = () => {
         selectBox.classList.add("hide");
         playBoard.classList.add("show");
+        players.setAttribute("class", "players active");
     }
 }
 
