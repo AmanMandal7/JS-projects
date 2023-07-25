@@ -37,7 +37,17 @@ function clickedBox(element) {
         players.classList.add("active");
     }
     element.style.pointerEvents = "none";
+    bot();
 }
 
 // bot click function
-
+function bot() {
+    let array = []; //storing the indexed of not selected boxes
+    for (let i = 0; i < allBox.length; i++) {
+        if (allBox[i].childElementCount == 0) {
+            array.push(i);
+            console.log(i + " " + "has no children");
+        }
+    }
+    console.log(array);
+}
