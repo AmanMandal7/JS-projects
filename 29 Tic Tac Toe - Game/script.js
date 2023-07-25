@@ -27,6 +27,7 @@ window.onload = () => {
 let playerXIcon = "fa fa-times";
 let playerOIcon = "fa-regular fa-circle";
 
+// user click function 
 function clickedBox(element) {
     if (players.classList.contains("player")) {
         element.innerHTML = `<i class="${playerOIcon}"></i>`
@@ -37,3 +38,6 @@ function clickedBox(element) {
     }
     element.style.pointerEvents = "none";
 }
+
+// bot click function
+
