@@ -42,12 +42,22 @@ function clickedBox(element) {
 
 // bot click function
 function bot() {
-    let array = []; //storing the indexed of not selected boxes
+    let array = []; //storing the indexes of not selected boxes
     for (let i = 0; i < allBox.length; i++) {
         if (allBox[i].childElementCount == 0) {
             array.push(i);
-            console.log(i + " " + "has no children");
+            // console.log(i + " " + "has no children");
         }
     }
-    console.log(array);
+    let randomBox = array[Math.floor(Math.random() * array.length)];
+    // console.log(randomBox);
+    if (array.length > 0) {
+        if (players.classList.contains("player")) {
+            allBox[randomBox].innerHTML = `<i class="${playerXIcon}"></i>`
+            players.classList.add("active");
+        } else {
+            allBox[randomBox].innerHTML = `<i class="${playerOIcon}"></i>`
+            players.classList.add("active");
+        }
+    }
 }
