@@ -26,27 +26,38 @@ window.onload = () => {
 
 let playerXIcon = "fa fa-times";
 let playerOIcon = "fa-regular fa-circle";
+let playerSign = "X";
 
 // user click function 
 function clickedBox(element) {
     if (players.classList.contains("player")) {
         element.innerHTML = `<i class="${playerOIcon}"></i>`
-        players.classList.add("active");
+        players.classList.remove("active");
+        // if player select O then we'll change the playerSign value to O
+        playerSign = "O";
+        element.setAttribute("id", playerSign);
     } else {
         element.innerHTML = `<i class="${playerXIcon}"></i>`
         players.classList.add("active");
+        element.setAttribute("id", playerSign);
     }
     element.style.pointerEvents = "none";
-    bot();
+    let randomDelayTime = ((Math.random() * 1000) + 500).toFixed();
+    console.log(randomDelayTime);
+    setTimeout(() => {
+        bot();
+    }, randomDelayTime);
+
 }
 
 // bot click function
 function bot() {
+    // first changing the playerSign value
+    playerSign = "O";
     let array = []; //storing the indexes of not selected boxes
     for (let i = 0; i < allBox.length; i++) {
         if (allBox[i].childElementCount == 0) {
             array.push(i);
-            // console.log(i + " " + "has no children");
         }
     }
     let randomBox = array[Math.floor(Math.random() * array.length)];
@@ -55,9 +66,13 @@ function bot() {
         if (players.classList.contains("player")) {
             allBox[randomBox].innerHTML = `<i class="${playerXIcon}"></i>`
             players.classList.add("active");
+            playerSign = "X";
+            allBox[randomBox].setAttribute("id", playerSign);
         } else {
             allBox[randomBox].innerHTML = `<i class="${playerOIcon}"></i>`
-            players.classList.add("active");
+            players.classList.remove("active");
+            allBox[randomBox].setAttribute("id", playerSign);
         }
+        allBox[randomBox].style.pointerEvents = "none";
     }
 }
