@@ -24,7 +24,9 @@ const initGame = (button, clickedLetter) => {
         })
     } else {
         wrongGuessCount++;
+        hangmanImage.src = `images/hangman-${wrongGuessCount}.svg`;
     }
+    button.disabled = true;
     guessText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
 }
 
