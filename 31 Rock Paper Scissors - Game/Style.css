@@ -65,6 +65,10 @@ body {
   transition: opacity 0.3s ease;
 }
 
+.option_image.active {
+  opacity: 1;
+}
+
 .option_image:hover {
   opacity: 1;
 }
