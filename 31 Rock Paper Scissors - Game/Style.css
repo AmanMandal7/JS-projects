@@ -22,6 +22,28 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.container.start .user_result {
+  transform-origin: left;
+  animation: userShake 0.7s ease infinite;
+}
+
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.container.start .cpu_result {
+  transform-origin: right;
+  animation: cpuShake 0.7s ease infinite;
+}
+
+@keyframes cpuShake {
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
 .result_images {
   display: flex;
   column-gap: 7rem;
@@ -51,6 +73,10 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 2.5rem;
+}
+
+.container.start .option_images {
+  pointer-events: none;
 }
 
 .option_images img {

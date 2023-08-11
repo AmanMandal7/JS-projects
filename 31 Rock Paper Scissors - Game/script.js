@@ -9,6 +9,9 @@ optionImages.forEach((image, index) => {
     image.addEventListener("click", (e) => {
         image.classList.add("active");
 
+        userResult.src = cpuResult.src = "images/rock.png";
+        result.textContent = "Wait..."
+
         // Looping through all the images once again
         optionImages.forEach((image2, index2) => {
             // console.log(index, index2); 
@@ -17,34 +20,40 @@ optionImages.forEach((image, index) => {
             }
         });
 
-        //get the source of clicked image
-        let imageSrc = e.target.querySelector("img").src;
-        userResult.src = imageSrc;
+        gameContainer.classList.add("start");
 
-        //Generating random number for cpu result
-        let randomNumber = Math.floor(Math.random() * 3);
-        let cpuImages = ["images/rock.png", "images/paper.png", "images/scissors.png"];
-        cpuResult.src = cpuImages[randomNumber];
+        //Setting the timeout to delay the result calculation
+        let time = setTimeout(() => {
+            gameContainer.classList.remove("start");
+            //get the source of clicked image
+            let imageSrc = e.target.querySelector("img").src;
+            userResult.src = imageSrc;
 
-        // Assigning the letters to the selected and randomly generator option
-        let cpuValue = ["R", "P", "S"][randomNumber];
-        let userValue = ["R", "P", "S"][index];
+            //Generating random number for cpu result
+            let randomNumber = Math.floor(Math.random() * 3);
+            let cpuImages = ["images/rock.png", "images/paper.png", "images/scissors.png"];
+            cpuResult.src = cpuImages[randomNumber];
 
-        //Creating object for all possible outcomes
-        let outcomes = {
-            RR: "Draw",
-            RP: "Computer",
-            RS: "You",
-            PP: "Draw",
-            PR: "You",
-            PS: "Computer",
-            SS: "Draw",
-            SR: "Computer",
-            SP: "You"
-        };
+            // Assigning the letters to the selected and randomly generator option
+            let cpuValue = ["R", "P", "S"][randomNumber];
+            let userValue = ["R", "P", "S"][index];
 
-        let outComeValue = outcomes[userValue + cpuValue];
-        result.innerText = userValue === cpuValue ? "Match Draw!!" : `${outComeValue} Won!`;
+            //Creating object for all possible outcomes
+            let outcomes = {
+                RR: "Draw",
+                RP: "Computer",
+                RS: "You",
+                PP: "Draw",
+                PR: "You",
+                PS: "Computer",
+                SS: "Draw",
+                SR: "Computer",
+                SP: "You"
+            };
+
+            let outComeValue = outcomes[userValue + cpuValue];
+            result.innerText = userValue === cpuValue ? "Match Draw" : `${outComeValue} Won!`;
+        }, 2500)
 
     })
 })
