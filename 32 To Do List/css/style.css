@@ -6,3 +6,11 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+.container {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
