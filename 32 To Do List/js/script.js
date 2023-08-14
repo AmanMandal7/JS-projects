@@ -7,6 +7,15 @@ const clearBtn = document.querySelector(".clear-button");
 function allTasks() {
     const tasks = document.querySelectorAll(".pending");
     pendingNum.textContent = tasks.length === 0 ? "no" : tasks.length;
+
+    let allLists = document.querySelectorAll(".list");
+    if (allLists.length > 0) {
+        todoLists.style.marginTop = "20px";
+        clearBtn.style.pointerEvents = "auto";
+        return;
+    }
+    todoLists.style.marginTop = "0px";
+    clearBtn.style.pointerEvents = "none";
 }
 
 inputField.addEventListener("keyup", (e) => {
