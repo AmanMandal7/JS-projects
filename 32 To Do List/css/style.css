@@ -61,7 +61,10 @@ textarea::-webkit-scrollbar {
 }
 
 .container .todoLists {
+  max-height: 380px;
+  overflow-y: auto;
   margin-top: 20px;
+  padding-right: 10px;
 }
 
 .todoLists .list {
@@ -80,7 +83,7 @@ textarea::-webkit-scrollbar {
   height: 16px;
   min-width: 16px;
   accent-color: #4070f4;
-  /* pointer-events: none; */
+  pointer-events: none;
 }
 
 .todoLists .list .task {
