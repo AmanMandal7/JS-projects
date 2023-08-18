@@ -48,7 +48,15 @@ icons.forEach(icon => {
                 navigator.clipboard.writeText(toText.value);
             }
         } else {
-            console.log("Speech icon clicked")
+            let utterance;
+            if (target.id == "from") {
+                utterance = new SpeechSynthesisUtterance(fromText.value);
+                utterance.lang = selectTag[0].value; //setting the utterance language using .lang
+            } else if (target.id == "to") {
+                utterance = new SpeechSynthesisUtterance(toText.value);
+                utterance.lang = selectTag[1].value;
+            }
+            speechSynthesis.speak(utterance);
         }
     })
 })
