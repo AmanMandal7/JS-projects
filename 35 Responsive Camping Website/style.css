@@ -67,3 +67,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.main {
+  overflow: hidden; /* For Animations */
+}
