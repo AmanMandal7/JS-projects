@@ -245,3 +245,10 @@ img {
   left: -7rem;
   bottom: 0;
 }
+
+/* For Small Devices  */
+@media screen and (max-width: 305px) {
+  .container {
+    margin-inline: 1rem;
+  }
+}
