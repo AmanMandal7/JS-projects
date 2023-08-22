@@ -27,3 +27,11 @@ const bgHeader = () => {
 }
 
 window.addEventListener("scroll", bgHeader);
+
+// GSAP ANIMATION 
+gsap.from('.home__image-2', 1, { opacity: 0, y: 200, delay: .1 });
+gsap.from('.home__image-3', 1, { opacity: 0, y: 200, delay: .5 });
+gsap.from('.home__data', 1, { opacity: 0, y: -60, delay: 1 });
+gsap.from('.home__bird-1', 1, { opacity: 0, y: -80, delay: 1.1 });
+gsap.from('.home__image-1', 1, { opacity: 0, y: 200, delay: 1.2 });
+gsap.from('.home__image-4', 1, { opacity: 0, y: 200, delay: 1.3 });
