@@ -97,6 +97,10 @@ h1 {
   font-weight: 500;
 }
 
+.current-weather .icon {
+  text-align: center;
+}
+
 .current-weather .icon img {
   margin-top: -15px;
   max-width: 120px;
