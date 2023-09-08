@@ -40,11 +40,23 @@ const bubbleElem = bubbles.querySelectorAll(".bubble");
 const scoreElem = document.querySelector(".score");
 bubbleElem.forEach(elem => {
     elem.addEventListener("click", () => {
+        var tempVal = elem.innerText;
         if (hitElem.innerText == elem.innerText) {
             score += 10;
             elem.classList.add("clicked");
-        } else if (score > 0) {
+            elem.innerText = "+10";
+            setTimeout(() => {
+                elem.innerText = tempVal;
+            }, 1000)
+        } else if (hitElem.innerText != elem.innerText && score > 0) {
             score -= 10;
+            elem.innerText = "-10";
+            setTimeout(() => {
+                elem.innerText = tempVal;
+            }, 1000);
+            elem.classList.add("badClick");
+        } else if (hitElem.innerText != elem.innerText) {
+            elem.classList.add("badClick");
         }
         scoreElem.innerText = score;
     })

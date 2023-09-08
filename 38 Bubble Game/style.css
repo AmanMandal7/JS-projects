@@ -111,7 +111,13 @@ body {
 
 .bubble.clicked {
   pointer-events: none;
-  background-color: rgba(8, 41, 8, 0.922);
+  background-color: rgba(7, 28, 7, 0.922);
+  scale: 0.95;
+}
+
+.bubble.badClick {
+  pointer-events: none;
+  background-color: rgba(48, 13, 13, 0.922);
   scale: 0.95;
 }
 
