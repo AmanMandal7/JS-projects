@@ -1,24 +1,21 @@
 ## Cynthia Ugwu - Clone
 
-It's a clone of Cynthia Ugwu Website with some cool animations
+It's a simple bubble game.
 
 ## Tech Stack
 
-**Frontend:** HTML, CSS & JavaScript
+HTML, CSS & JavaScript
 
 ## Some Screenshots
 
-- Home Page
-  ![App Screenshot](https://github.com/AmanMandal7/CynthiaUgwu-Clone/blob/master/Screenshots/Home%20page.png)
+- Game Beginning Page
+  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/38%20Bubble%20Game/screenshots/Game%20begins.png)
 
-- Scrollabel Image - 1
-  ![App Screenshot](https://github.com/AmanMandal7/CynthiaUgwu-Clone/blob/master/Screenshots/Scrollable%20image%201.png)
+- Right and Wrong Bubbles Clicked
+  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/38%20Bubble%20Game/screenshots/Clicked%20Right%20and%20Wrong%20bubbles.png)
 
-- Scrollabel Image - 2
-  ![App Screenshot](https://github.com/AmanMandal7/CynthiaUgwu-Clone/blob/master/Screenshots/Scrollable%20image%202.png)
-
-- About Section
-  ![App Screenshot](https://github.com/AmanMandal7/CynthiaUgwu-Clone/blob/master/Screenshots/About%20section.png)
+- Game Over and Score Page
+  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/38%20Bubble%20Game/screenshots/Game%20Over%20and%20Score%20Page.png)
 
 ## 🔗 Links
 
