@@ -40,7 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80px;
+  height: 15%;
   background-color: rgba(52, 98, 52, 0.922);
 }
 
@@ -81,11 +81,19 @@ body {
 
 #pbottom {
   display: flex;
+  align-items: center;
+  justify-self: center;
+  padding: 20px;
+  height: 85%;
+}
+
+#bubbles {
+  overflow: hidden;
+  display: flex;
   gap: 7px;
   flex-wrap: wrap;
-  padding: 20px;
   width: 100%;
-  height: calc(100% - 80px);
+  height: 100%;
 }
 
 .bubble {
@@ -99,6 +107,12 @@ body {
   color: #fff;
   font-size: 13px;
   transition: all ease 0.3s;
+}
+
+.bubble.clicked {
+  pointer-events: none;
+  background-color: rgba(8, 41, 8, 0.922);
+  scale: 0.95;
 }
 
 .bubble:hover {
