@@ -73,3 +73,8 @@ body {
   font-weight: 500;
   color: rgba(38, 79, 38, 0.922);
 }
+
+#pbottom {
+  width: 100%;
+  height: calc(100% - 80px);
+}
