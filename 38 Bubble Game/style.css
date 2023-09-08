@@ -7,6 +7,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+*::selection {
+  background-color: rgba(14, 59, 14, 0.922);
+  color: #fff;
+}
+
 html,
 body {
   width: 100%;
@@ -25,7 +30,7 @@ body {
 #panel {
   overflow: hidden;
   width: 70%;
-  height: 80%;
+  height: 75%;
   background-color: #fff;
   border-radius: 10px;
 }
@@ -69,12 +74,35 @@ body {
   background-color: #fff;
   border-radius: 3px;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
   color: rgba(38, 79, 38, 0.922);
 }
 
 #pbottom {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  padding: 20px;
   width: 100%;
   height: calc(100% - 80px);
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(38, 79, 38, 0.922);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 13px;
+  transition: all ease 0.3s;
+}
+
+.bubble:hover {
+  cursor: pointer;
+  background-color: rgba(14, 59, 14, 0.922);
+  scale: 0.95;
 }
