@@ -27,7 +27,7 @@ const runTimer = () => {
             timerElem.innerText = timer;
         } else {
             clearInterval(timerInterval);
-            // gameOver();
+            gameOver();
         }
     }, 1000);
 }
@@ -60,8 +60,19 @@ bubbleElem.forEach(elem => {
         }
         scoreElem.innerText = score;
     })
-})
+});
 
-// const gameOver = () => {
-//     alert(`Game Over! Your Score is ${finalScore}`)
-// }
+
+const panel = document.querySelector("#panel");
+const gameOverElem = document.querySelector("#gameOver");
+const finalScore = gameOverElem.querySelector(".text2");
+const restartBtn = document.querySelector(".restart");
+const gameOver = () => {
+    panel.style.display = "none";
+    gameOverElem.classList.add("active");
+    finalScore.innerText = `Your Score is ${score}`;
+};
+
+restartBtn.addEventListener("click", () => {
+    location.reload();
+});

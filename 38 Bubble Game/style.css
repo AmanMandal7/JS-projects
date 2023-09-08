@@ -19,6 +19,7 @@ body {
 }
 
 #main {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +29,9 @@ body {
 }
 
 #panel {
+  position: absolute;
+  z-index: 9;
+  display: block;
   overflow: hidden;
   width: 70%;
   height: 75%;
@@ -125,4 +129,55 @@ body {
   cursor: pointer;
   background-color: rgba(14, 59, 14, 0.922);
   scale: 0.95;
+}
+
+/* Styling the Game Over page  */
+#gameOver {
+  position: absolute;
+  scale: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 50px 80px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+#gameOver.active {
+  scale: 1;
+}
+
+#gameOver .text1 {
+  margin-bottom: -10px;
+  color: rgba(11, 45, 11, 0.922);
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+
+#gameOver .text2 {
+  margin-bottom: 20px;
+  color: rgba(11, 45, 11, 0.922);
+  letter-spacing: 3px;
+  font-size: 35px;
+}
+
+#gameOver button {
+  background-color: #fff;
+  color: rgba(11, 45, 11, 0.922);
+  border: 2px solid rgba(11, 45, 11, 0.922);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 400;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#gameOver button:hover {
+  scale: 1.1;
+  background-color: rgba(11, 45, 11, 0.922);
+  color: #fff;
 }
