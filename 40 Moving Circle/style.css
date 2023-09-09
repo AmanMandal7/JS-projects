@@ -19,18 +19,19 @@ body {
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   min-height: 100%;
   background-color: rgba(253, 156, 156, 0.825);
 }
 
-.rectangle {
+.circle {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
   background-color: #fdecec;
