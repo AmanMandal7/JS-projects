@@ -40,6 +40,10 @@ body {
   cursor: pointer;
 }
 
+.rectangle.left {
+  background-color: #fdecec;
+}
+
 .left {
   background-color: red;
   width: calc(100% / 2);
