@@ -7,6 +7,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+*::selection {
+  background-color: rgba(14, 59, 14, 0.922);
+  color: #fff;
+}
+
 html,
 body {
   width: 100%;
@@ -19,34 +24,18 @@ body {
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  background-color: rgb(253, 156, 213);
+  background-color: rgba(253, 156, 156, 0.825);
 }
 
 .rectangle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  width: 200px;
   height: 200px;
   background-color: #fdecec;
   border: 2px solid rgb(124, 124, 124);
-  border-radius: 10px;
+  border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
-}
-
-.rectangle.left {
-  background-color: #fdecec;
-}
-
-.left {
-  background-color: red;
-  width: calc(100% / 2);
-  height: 100%;
-}
-
-.right {
-  background-color: blue;
-  width: calc(100% / 2);
-  height: 100%;
 }
