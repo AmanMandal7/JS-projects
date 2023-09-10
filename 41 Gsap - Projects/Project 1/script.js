@@ -44,7 +44,7 @@ tl.from("p", {
 tl.to("p", {
     y: 8,
     repeat: -1,
-    duration: 1,
+    duration: 0.7,
     yoyo: true
 })
 
