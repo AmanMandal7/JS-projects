@@ -13,3 +13,80 @@ body {
   height: 100%;
   color: #fff;
 }
+
+.page1 {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.nav {
+  width: 94%;
+  display: flex;
+  height: 100px;
+  border-bottom: 2px solid #797979;
+  margin: 0 40px;
+  padding-top: 20px;
+}
+
+.leftSide {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+
+.leftSide h1 {
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: 1000;
+}
+
+.headings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.headings h5 {
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #999797;
+}
+
+.rightSide {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+}
+
+.rightSide h5 {
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #999797;
+}
+
+.rightSide i {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #999797;
+  border: 2px solid #999797;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+/* Styling the Second page  */
+.page2 {
+  width: 100%;
+  height: 100%;
+  background-color: #ab6a6a;
+}
