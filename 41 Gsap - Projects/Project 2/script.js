@@ -45,3 +45,33 @@ tl.from(".right img", {
     scale: 0,
     duration: .5
 })
+
+gsap.from(".page2 .button, .headings h3", {
+    x: -400,
+    opacity: 0,
+    duration: .5,
+    stagger: .2,
+    scrollTrigger: {
+        trigger: ".page2 .button, .headings h3",
+        scroller: "body",
+        // markers: true,
+        start: "top 50%",
+        end: "top 50%",
+        scrub: 3
+    }
+});
+
+gsap.from(".boxes .box1, .boxes .box2, .boxes .box3", {
+    scale: 0,
+    opacity: 0,
+    duration: .7,
+    stagger: .3,
+    scrollTrigger: {
+        trigger: ".boxes .box1, .boxes .box2, .boxes .box3",
+        scroller: "body",
+        // markers: true,
+        start: "top 100%",
+        end: "top 80%",
+        scrub: 3
+    }
+})
