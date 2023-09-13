@@ -1,16 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@font-face {
+  font-family: heading;
+  src: url(/Heading-Now-Variable.ttf);
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: heading;
+  /* font-family: "Poppins", sans-serif; */
+}
+
+*::selection {
+  background-color: #fff;
+  color: #000;
 }
 
 html,
 body {
   width: 100%;
   height: 100%;
+}
+
+/* Styling the first page  */
+.page1 {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.page1 h1 {
+  font-size: 50vw;
   color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-stretch: 260%; /* this prop only works on variable font families  */
+  font-weight: 1000;
+  margin-left: 50px;
+  line-height: 1;
+}
+
+.page2 {
+  width: 100%;
+  height: 100vh;
+  background-color: #535353;
+}
+
+.page3 {
+  width: 100%;
+  height: 100vh;
   background-color: #000;
 }
