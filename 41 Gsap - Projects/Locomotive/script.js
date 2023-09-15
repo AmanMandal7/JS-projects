@@ -29,49 +29,40 @@ ScrollTrigger.refresh();
 
 
 
-
-
-
-// MAIN SCRIPTING OF THE WEBSITE 
-var tl = gsap.timeline();
-
-const load = false;
-const loadingTimer = () => {
-    var a = 0;
-    setInterval(() => {
-        if (a < 100) {
-            a = a + Math.floor(Math.random() * 20);
-            document.querySelector(".loader h1").innerHTML = a + "%"
-        } else {
-            document.querySelector(".loader h1").innerText = `100%`
-
-        }
-    }, 150);
-};
-
-
-tl.to(".loader h1", {
-    delay: .5,
-    duration: 1.5,
-    onStart: loadingTimer()
-})
-
-tl.to(".loader", {
-    top: "-100vh",
-    delay: .5,
+// OUR SCRIPTING 
+gsap.from(".page1 .box", {
+    scale: 0,
+    delay: 1,
     duration: 1,
+    rotate: 180
 })
 
-tl.to(".page1 h1", {
-    transform: "translateX(-1900px)",
-    fontWeight: 200,
+gsap.from(".page2 .box", {
+    scale: 0,
+    delay: 1,
+    duration: 1,
+    rotate: 180,
     scrollTrigger: {
-        trigger: ".page1",
+        trigger: ".page2 .box",
         scroller: ".main",
         // markers: true,
-        start: "top 0%",
-        end: "top -200%",
-        scrub: 2,
-        pin: true //when we are using pin, we must trigger the parent page
-    },
-});
+        start: "top 100%",
+        end: "top 50%",
+        scrub: 2
+    }
+})
+
+gsap.from(".page3 .box", {
+    scale: 0,
+    delay: 1,
+    duration: 1,
+    rotate: 180,
+    scrollTrigger: {
+        trigger: ".page3 .box",
+        scroller: ".main",
+        // markers: true,
+        start: "top 100%",
+        end: "top 50%",
+        scrub: 2
+    }
+})
