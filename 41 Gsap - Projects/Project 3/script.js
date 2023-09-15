@@ -1,5 +1,11 @@
 var tl = gsap.timeline();
 
+// tl.to(".loader", {
+//     top: "-100%",
+//     delay: 1,
+//     duration: 1
+// })
+
 tl.to(".page1 h1", {
     transform: "translateX(-1900px)",
     fontWeight: 200,
