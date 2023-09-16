@@ -1,3 +1,16 @@
+@font-face {
+  font-family: migra;
+  src: url(/PPMigra-Regular.fb0ee287.ttf);
+}
+@font-face {
+  font-family: grotesk;
+  src: url(/SharpGrotesk-Bold.164b198a.ttf);
+}
+@font-face {
+  font-family: tt;
+  src: url(/TTCommons-Regular.7ec989a7.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,16 +27,54 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #aeacac;
+  background-color: #e8e8e8;
 }
 
-.box {
+.nav {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.nav h5 {
+    text-transform: uppercase;
+     font-weight: 300;
+     font-size: 16px;
+    font-family: tt;
+   
+}
+
+.nav h2 {
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: migra;
+}
+
+.headings {
   position: absolute;
-  width: 50%;
+  width: 70%;
   height: 60%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: salmon;
+}
+
+.headings h1 {
+  font-family: migra;
+  font-size: 8vw;
+  line-height: .8;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.headings h1:nth-child(3) {
+  font-family: grotesk;
 }
