@@ -29,6 +29,7 @@ rectangle.addEventListener("mousemove", (dets) => {
     }
 });
 
+// Adding the event listener 
 rectangle.addEventListener("mouseleave", () => {
     text.innerText = 'Hover over me to see the Magic';
     gsap.to(rectangle, {
