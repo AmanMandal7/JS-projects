@@ -1,21 +1,24 @@
-## Bubble - Game
+## Cool Card Animation
 
-It's a simple bubble game.
+When we hover over the texts, a cool animation of images being popped can be seen
 
 ## Tech Stack
 
-HTML, CSS & JavaScript
+HTML, CSS, JavaScript & Gsap
 
 ## Some Screenshots
 
-- Game Beginning Page
-  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/38%20Bubble%20Game/screenshots/Game%20begins.png)
+- Home Page
+  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/42%20Card%20Animation/Screenshots/1.png)
 
-- Right and Wrong Bubbles Clicked
-  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/38%20Bubble%20Game/screenshots/Clicked%20Right%20and%20Wrong%20bubbles.png)
+- Animation SS 1
+  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/42%20Card%20Animation/Screenshots/2.png)
 
-- Game Over and Score Page
-  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/38%20Bubble%20Game/screenshots/Game%20Over%20and%20Score%20Page.png)
+- Animation SS 2
+  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/42%20Card%20Animation/Screenshots/3.png)
+
+- Animation SS 3
+  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/42%20Card%20Animation/Screenshots/4.png)
 
 ## 🔗 Links
 
