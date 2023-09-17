@@ -1,6 +1,6 @@
 // The below code is called 'Throttling', it means to decrease the number of execution of a function over a period of time
 // This throttleFunction code is copied from geeksForGeeks 
-// Simple throttle function code can be found in throttleFunctionEx2.js file
+// Simple throttle function example can be found in throttleFunctionEx2.js file, created myself
 
 const headings = document.querySelectorAll(".headings h1");
 const container = document.querySelector(".container");
