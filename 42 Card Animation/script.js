@@ -26,18 +26,24 @@ headings.forEach(h1 => {
         div.style.left = dets.clientX + "px"
         div.style.top = `${dets.clientY - 270}px `
 
+        var randomImg = Math.floor(Math.random() * 12);
         var img = document.createElement("img");
-        img.setAttribute("src", 'https://images.unsplash.com/photo-1694843697790-d384af776f2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80')
+        img.setAttribute("src", `images/${randomImg}.avif`)
         div.appendChild(img);
 
         container.appendChild(div);
 
-        // USING GSAP FOR ANIMATIONS // 
+        // USING GSAP FOR ANIMATIONS //
 
-        // gsap.to(div, {
-        //     rotate: 10,
-        // })
-        gsap.to(img, {
+        var rotVal = [-10, 0, 10]
+        var randomRot = Math.floor(Math.random() * 3)
+
+        var tl = gsap.timeline();
+        tl.to(div, {
+            rotate: `${rotVal[randomRot]}`,
+            duration: -1,
+        })
+        tl.to(img, {
             y: 0,
             duration: .5,
             ease: Power1,
@@ -45,17 +51,10 @@ headings.forEach(h1 => {
             repeat: -1
         })
 
-        // gsap.to(img, {
-        //     y: 300,
-        //     delay: .5,
-        //     duration: .5,
-        //     ease: Power1
-        // })
-
         setTimeout(() => {
             div.remove();
         }, 1000);
-    }, 500));
+    }, 200));
 })
 
 
