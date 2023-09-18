@@ -1,24 +1,21 @@
-## Cool Card Animation
+## Insta Story Feature
 
-When we hover over the texts, a cool animation of images being popped can be seen
+It's a simple insta story feature. We can see multiple stories and when we click on anyone of them, we can see it's respective story for 10 seonds.
 
 ## Tech Stack
 
-HTML, CSS, JavaScript & Gsap
+HTML, CSS, JavaScript
 
 ## Some Screenshots
 
 - Home Page
-  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/42%20Card%20Animation/Screenshots/1.png)
+  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/43%20Insta%20Story%20Feature/Screenshots/1.png)
 
-- Animation SS 1
-  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/42%20Card%20Animation/Screenshots/2.png)
+- Multiple Stories
+  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/43%20Insta%20Story%20Feature/Screenshots/2.png)
 
-- Animation SS 2
-  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/42%20Card%20Animation/Screenshots/3.png)
-
-- Animation SS 3
-  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/42%20Card%20Animation/Screenshots/4.png)
+- Can see the Story
+  ![App Screenshot](https://github.com/AmanMandal7/JS-projects/blob/master/43%20Insta%20Story%20Feature/Screenshots/3.png)
 
 ## 🔗 Links
 
