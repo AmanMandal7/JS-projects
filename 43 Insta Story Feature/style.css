@@ -17,29 +17,30 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(
-    to bottom left,
-    rgb(255, 191, 0),
+    to top right,
+    rgb(205, 156, 7),
     rgb(255, 123, 0),
     red,
     rgb(244, 0, 191),
-    rgb(121, 11, 248)
+    rgba(108, 18, 209, 0.762)
   );
 }
 
 .main {
-  width: 350px;
+  position: relative;
+  width: 320px;
   height: 600px;
   border: 4px solid black;
   border-top: 13px solid black;
   border-bottom: 10px solid black;
   border-radius: 25px;
-  background-color: #fff;
+  background-color: #F1F1F1;
 }
 
 .main .stories {
   width: 100%;
   height: 110px;
-  padding: 10px;
+  padding: 20px 10px;
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
@@ -73,4 +74,72 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 3.8px solid black;
+}
+
+/* Styling the full preview part  */
+.fullpreview {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 35px 0;
+  border-radius: 14px;
+}
+
+.fullpreview .progress {
+  position: absolute;
+  z-index: 9;
+  top: 8%;
+  left: 1.5%;
+  width: 97%;
+  border-radius: 8px;
+  height: 3px;
+  background-color: #dadadaa8;
+}
+
+.fullpreview .growth {
+  width: 100%;
+  height: 3px;
+  border-radius: 8px;
+  background-color: #fff;
+  animation: loader 10s forwards cubic-bezier(0, 0, 0, 0);
+}
+
+@keyframes loader {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.fullpreview i {
+  position: absolute;
+  cursor: pointer;
+  top: 53px;
+  right: 4px;
+  color: #ffffff;
+  z-index: 9;
+  font-size: 28px;
+}
+
+.fullpreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Styling the logo  */
+
+.logo {
+  position: absolute;
+  z-index: 99;
+  top: 40%;
+  left: 18%;
+}
+.logo > img {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
 }
