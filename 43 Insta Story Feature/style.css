@@ -16,7 +16,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom left, rgb(255, 191, 0), rgb(255, 123, 0), red, rgb(244, 0, 191), rgb(121, 11, 248))
+  background: linear-gradient(
+    to bottom left,
+    rgb(255, 191, 0),
+    rgb(255, 123, 0),
+    red,
+    rgb(244, 0, 191),
+    rgb(121, 11, 248)
+  );
 }
 
 .main {
@@ -30,29 +37,41 @@ body {
 }
 
 .main .stories {
-    width: 100%;
-    height: 110px;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    /* background-color: seagreen; */
+  width: 100%;
+  height: 110px;
+  padding: 0 10px;
+  padding: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 
+.stories::-webkit-scrollbar {
+  display: none;
 }
 
 .story {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to top right, rgb(251, 255, 0), rgb(255, 2, 2), rgb(244, 0, 207));
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding: 4.5px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background: linear-gradient(
+    to top right,
+    rgb(251, 255, 0),
+    rgb(255, 2, 2),
+    rgb(244, 0, 207)
+  );
 }
 
-.story img{
-    width: 81px;
-    height: 81px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3.8px solid black;
+.story img {
+  display: inline-block;
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3.8px solid black;
 }
