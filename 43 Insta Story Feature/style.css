@@ -39,7 +39,6 @@ body {
 .main .stories {
   width: 100%;
   height: 110px;
-  padding: 0 10px;
   padding: 10px;
   white-space: nowrap;
   overflow-x: auto;
