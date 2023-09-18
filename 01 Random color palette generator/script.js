@@ -29,5 +29,6 @@ const copyColor = (elem, hexVal) => {
     }).catch(() => alert("Failed to copy the color code")) //showing alert if color can't be copied
 }
 
+// Adding the event listener 
 refreshBtn.addEventListener("click", generatePaletter)
 
