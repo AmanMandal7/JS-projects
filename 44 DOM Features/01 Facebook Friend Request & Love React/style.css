@@ -37,13 +37,18 @@ body {
   color: #fff;
   top: 25%;
   font-size: 50px;
-  opacity: 0.8;
+  opacity: 0;
+  transition: transform ease 0.3s;
 }
 
 .name i {
   font-weight: 100;
-  margin-right: 5px;
+  margin-right: 15px;
   cursor: pointer;
+}
+
+.name span {
+  transition: all 0.3s ease;
 }
 
 .card img {
