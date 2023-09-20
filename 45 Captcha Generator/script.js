@@ -18,12 +18,28 @@ const refreshBtnClick = () => {
     generateCaptcha();
     captchaInputBox.value = "";
     captchaKeyUpValidate();
+    message.classList.remove("active");
+    if (captchaInputBox.value === "") message.classList.remove("active");
 }
 
 const captchaKeyUpValidate = () => {
     submitBtn.classList.toggle("disabled", !captchaInputBox.value);
+    if (captchaInputBox.value === "") message.classList.remove("active");
 }
 
-captchaInputBox.addEventListener("keyup", captchaKeyUpValidate)
+const submitBtnClick = () => {
+    captchaText = captchaText.split("").filter(char => char !== " ").join("");
+    if (captchaText === captchaInputBox.value) {
+        message.innerText = "Entered captcha is correct";
+        message.classList.add("active");
+    } else {
+        message.innerText = "Entered captcha is not correct";
+        message.classList.add("active");
+        message.style.color = "red";
+    }
+}
+
+captchaInputBox.addEventListener("keyup", captchaKeyUpValidate);
+submitBtn.addEventListener("click", submitBtnClick);
 refreshBtn.addEventListener("click", refreshBtnClick);
 generateCaptcha();

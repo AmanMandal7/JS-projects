@@ -89,6 +89,10 @@ header {
   display: none;
 }
 
+.message.active {
+  display: block;
+}
+
 .button button {
   background-color: rgb(132, 86, 247);
   color: #fff;
