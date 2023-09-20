@@ -2,7 +2,7 @@ const captchaTextBox = document.querySelector(".captcha_box input");
 const captchaInputBox = document.querySelector(".captcha_input input");
 const refreshBtn = document.querySelector(".refresh_button");
 const message = document.querySelector(".message");
-const submitBtn = document.querySelector(".button button");
+const submitBtn = document.querySelector(".button");
 
 var captchaText = null;
 
@@ -12,8 +12,18 @@ const generateCaptcha = () => {
     const chageString = randomStringArray.map(char => Math.random() > 0.5 ? char.toUpperCase() : char);
     captchaText = chageString.join("   ");
     captchaTextBox.value = captchaText;
-    console.log(randomStringArray, chageString, captchaText);
 }
 
-refreshBtn.addEventListener("click", generateCaptcha);
+const refreshBtnClick = () => {
+    generateCaptcha();
+    captchaInputBox.value = "";
+    captchaKeyUpValidate();
+}
+
+const captchaKeyUpValidate = () => {
+    submitBtn.classList.toggle("disabled", !captchaInputBox.value);
+}
+
+captchaInputBox.addEventListener("keyup", captchaKeyUpValidate)
+refreshBtn.addEventListener("click", refreshBtnClick);
 generateCaptcha();

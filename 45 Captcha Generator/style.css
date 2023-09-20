@@ -55,7 +55,7 @@ header {
 }
 
 .refresh_button:active {
-    transform: translateY(-50%) scale(0.94);
+  transform: translateY(-50%) scale(0.94);
 }
 
 .input_field input,
@@ -94,8 +94,14 @@ header {
   color: #fff;
   font-size: 14px;
   cursor: pointer;
+  user-select: none;
 }
 
 .button button:active {
   transform: scale(0.99);
+}
+
+.button.disabled button {
+  opacity: 0.6;
+  pointer-events: none;
 }
