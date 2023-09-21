@@ -24,7 +24,7 @@ body {
   background-color: #fff;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 header {
@@ -105,7 +105,11 @@ header {
   transform: scale(0.99);
 }
 
-.button.disabled button {
+.button.disabled {
   opacity: 0.6;
   pointer-events: none;
 }
+
+/* .button.disabled {
+  pointer-events: none;
+} */

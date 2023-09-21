@@ -13,6 +13,7 @@ const generateCaptcha = () => {
     captchaText = chageString.join("   ");
     captchaTextBox.value = captchaText;
 }
+generateCaptcha();
 
 const refreshBtnClick = () => {
     generateCaptcha();
@@ -42,4 +43,3 @@ const submitBtnClick = () => {
 captchaInputBox.addEventListener("keyup", captchaKeyUpValidate);
 submitBtn.addEventListener("click", submitBtnClick);
 refreshBtn.addEventListener("click", refreshBtnClick);
-generateCaptcha();
