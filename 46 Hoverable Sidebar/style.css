@@ -14,8 +14,48 @@ body {
   background-color: #78cdc7;
 }
 
+/* Pre CSS  */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
 .nav_image img {
   height: 55px;
   width: 55px;
   object-fit: cover;
+  border-radius: 50%;
+}
+
+/* sidebar  */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-width: 270px;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  padding: 15px 10px;
+}
+
+.logo_items {
+  gap: 8px;
+}
+
+.logo_name {
+  font-size: 22px;
+  color: #333;
+  font-weight: 500;
+}
+
+#sidebar-close, #lock-icon {
+  padding: 10px;
+  color: #78cdc7;
+  font-size: 25px;
+  cursor: pointer;
+}
+#sidebar-close {
+  color: #fff;
+  display: none;
 }
