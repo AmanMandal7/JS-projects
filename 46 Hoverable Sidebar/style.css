@@ -169,3 +169,18 @@ body {
   height: 40px;
   margin-left: 20px;
 }
+
+/* Responsive  */
+@media screen and (max-width: 1100px) {
+  .navbar {
+    left: 65%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .navbar {
+    left: 0;
+    transform: translateX(0);
+    max-width: 100%;
+  }
+}
