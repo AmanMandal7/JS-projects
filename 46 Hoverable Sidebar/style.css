@@ -131,3 +131,41 @@ body {
   color: #333;
 }
 
+/* Navbar  */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 60%;
+  max-width: 500px;
+  width: 100%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 8px 20px;
+  border-radius: 0 0 8px 8px;
+  justify-content: space-between;
+}
+
+#sidebar-open {
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.navbar .search {
+  height: 46px;
+  max-width: 500px;
+  width: 100%;
+  padding: 0 15px;
+  border: 1px solid #aaa;
+  outline: none;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #333;
+}
+
+.navbar img {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+}
