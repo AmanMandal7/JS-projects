@@ -20,9 +20,13 @@ body {
   align-items: center;
 }
 
+.nav_image {
+  display: flex;
+  align-items: center;
+}
 .nav_image img {
-  height: 55px;
-  width: 55px;
+  height: 50px;
+  width: 50px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -37,6 +41,10 @@ body {
   background-color: #fff;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   padding: 15px 10px;
+  transition: all 0.4s ease;
+}
+.sidebar.close {
+  width: 75px;
 }
 
 .logo_items {
@@ -47,6 +55,10 @@ body {
   font-size: 22px;
   color: #333;
   font-weight: 500;
+  transition: all 0.4s ease;
+}
+.sidebar.close .logo_name, .sidebar.close #lock-icon,.sidebar.close #sidebar-close  {
+  display: none;
 }
 
 #sidebar-close,
@@ -63,7 +75,7 @@ body {
 
 /* Styling the Menu Container  */
 .menu_container {
-  margin: 42px 7px;
+  margin: 42px 2.5px;
   overflow-y: auto;
   height: calc(100% - 105px);
 }
@@ -78,19 +90,31 @@ body {
 }
 .menu_title .line {
   position: absolute;
-  left: 50%;
+  left: 40%;
   transform: translateX(-50%);
   width: 20px;
   border-radius: 25px;
   height: 3px;
   background-color: #aaa;
+  transition: all .3s ease;
 }
+.sidebar.close .title {
+  opacity: 0;
+}
+
 .menu_title .line {
   opacity: 0;
+  transition: all .3s ease;
+}
+.sidebar.close .line {
+  opacity: 1;
 }
 
 .item {
   list-style: none;
+}
+.sidebar.close .item span {
+  display: none;
 }
 .link {
   text-decoration: none;
@@ -106,8 +130,7 @@ body {
   white-space: nowrap;
 }
 .link i {
-  width: 50px;
-  height: 55px;
+  padding: 15px 10px;
   font-size: 22px;
   display: flex;
   align-items: center;
