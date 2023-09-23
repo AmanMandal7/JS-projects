@@ -29,8 +29,22 @@ const showSidebar = () => {
     }
 }
 
+//Toggle the sidebar 
+const toggleSidebar = () => {
+    sidebar.classList.toggle("close");
+}
+
+//If the window is less than 800px
+if (window.innerWidth < 800) {
+    sidebar.classList.add("close");
+    sidebar.classList.remove("locked");
+    sidebar.classList.remove("hoverable");
+}
+
 
 // Adding event listeners 
 sidebarLockBtn.addEventListener("click", toggleLock);
 sidebar.addEventListener("mouseleave", hideSidebar);
 sidebar.addEventListener("mouseenter", showSidebar);
+sidebarOpenBtn.addEventListener("click", toggleSidebar);
+sidebarCloseBtn.addEventListener("click", toggleSidebar);
