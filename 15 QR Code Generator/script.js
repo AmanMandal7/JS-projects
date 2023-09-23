@@ -15,6 +15,7 @@ generateBtn.addEventListener("click", () => {
     })
 });
 
+//Required event listener
 qrInput.addEventListener("keyup", () => {
     if (!qrInput.value) {
         wrapper.classList.remove("active");
