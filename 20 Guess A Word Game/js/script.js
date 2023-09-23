@@ -61,6 +61,7 @@ function initGame(e) {
     })
 }
 
+// Required event listeners 
 resetBtn.addEventListener("click", randomWord);
 typingInput.addEventListener("input", initGame);
 inputs.addEventListener("click", () => typingInput.focus());
