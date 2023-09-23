@@ -39,6 +39,7 @@ img.addEventListener("dblclick", () => {
     }
 })
 
+// For Second love icon
 
 var love = false;
 love2.addEventListener("click", () => {
