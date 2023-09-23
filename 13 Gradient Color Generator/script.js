@@ -36,6 +36,7 @@ const copyCode = () => {
     setTimeout(() => copyBtn.innerText = "Copy Code", 1600);
 }
 
+// Required event listeners 
 selectMenu.addEventListener("change", () => generateGradient(false));
 refreshBtn.addEventListener("click", () => generateGradient(true));
 copyBtn.addEventListener("click", copyCode);
