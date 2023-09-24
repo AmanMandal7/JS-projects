@@ -1,3 +1,4 @@
+// For smooth scrolling 
 const loco = () => {
     gsap.registerPlugin(ScrollTrigger);
 

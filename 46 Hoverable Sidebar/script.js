@@ -42,7 +42,7 @@ if (window.innerWidth < 800) {
 }
 
 
-// Adding event listeners 
+// Adding the event listeners 
 sidebarLockBtn.addEventListener("click", toggleLock);
 sidebar.addEventListener("mouseleave", hideSidebar);
 sidebar.addEventListener("mouseenter", showSidebar);
