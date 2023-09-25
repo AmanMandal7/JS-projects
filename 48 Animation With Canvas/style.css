@@ -18,32 +18,13 @@ body {
   overflow: hidden;
 }
 
+/* Styling the firs page  */
+
 #page {
   position: relative;
   width: 100vw;
   height: 100vh;
   background-color: #e0dddd;
-}
-
-#page1 {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(216, 197, 89);
-}
-
-#page2 {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(249, 143, 131);
-}
-
-#page3 {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(160, 208, 63);
 }
 
 canvas {
@@ -94,7 +75,6 @@ h1 span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 .logo {
@@ -114,7 +94,78 @@ nav .date {
 .date span {
   background-color: black;
   color: #fff;
-  padding:6px 12px;
+  padding: 6px 12px;
   border-radius: 25px;
   font-size: 17px;
+}
+
+.text {
+  position: absolute;
+  top: 56%;
+  left: 6%;
+  width: 88%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.text2 h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Styling the second page  */
+#page1 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #e0dddd; */
+}
+
+.lefttext {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: fit-content;
+}
+
+.righttext {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#page1 h4 {
+  font-weight: 400;
+}
+
+#page1 h2 {
+  font-size: 40px;
+  line-height: 1.3;
+} 
+
+
+
+
+#page2 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(249, 143, 131);
+}
+
+#page3 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(160, 208, 63);
 }
