@@ -125,7 +125,7 @@ nav .date {
   position: relative;
   width: 100vw;
   height: 100vh;
-  /* background-color: #e0dddd; */
+  background-color: #e0dddd;
 }
 
 .lefttext {
@@ -144,28 +144,63 @@ nav .date {
   align-items: flex-end;
 }
 
-#page1 h4 {
+.lefttext h4 {
   font-weight: 400;
+  font-size: 20px;
+}
+.righttext h4 {
+  font-weight: 400;
+  font-size: 20px;
 }
 
-#page1 h2 {
-  font-size: 40px;
-  line-height: 1.3;
-} 
-
-
-
+.lefttext h2 {
+  font-size: 55px;
+  line-height: 1.2;
+}
+.righttext h2 {
+  font-size: 55px;
+  line-height: 1.2;
+}
 
 #page2 {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(249, 143, 131);
+  background-color: #e0dddd;
+}
+
+#page2 .righttext {
+  top: 45%;
+  right: 3%;
+}
+.righttext span {
+  text-align: end;
+  font-size: 16px;
+}
+.righttext span:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+#page2 .lefttext {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: fit-content;
 }
 
 #page3 {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(160, 208, 63);
+  background-color: #e0dddd;
+}
+
+#page3 .lefttext {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+#page3 .lefttext span:nth-child(1) {
+  margin-bottom: 10px;
 }
