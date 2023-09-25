@@ -204,3 +204,89 @@ nav .date {
 #page3 .lefttext span:nth-child(1) {
   margin-bottom: 10px;
 }
+
+/* Styling the page 4 */
+#page4 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, #757373, #e0dddd);
+}
+
+#page4 .head {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.head h1 {
+  font-size: 60px;
+  margin-bottom: -10px;
+}
+.head h5 {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.body {
+  position: absolute;
+  top: 28%;
+  width: 100%;
+  height: 47%;
+}
+.body h1 {
+  font-size: 120px;
+  line-height: 0.9;
+  white-space: nowrap;
+  -webkit-text-stroke: 2px black;
+  color: transparent;
+}
+.body .wrapper {
+  display: flex;
+}
+.body .first {
+  animation: anim1 25s linear infinite;
+}
+.body .second {
+  animation: anim2 80s linear infinite;
+}
+.body .third {
+  animation: anim3 40s linear infinite;
+}
+
+@keyframes anim1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes anim2 {
+  0% {
+    transform: translateX(-350%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes anim3 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#page4 img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 540px;
+  height: 540px;
+}
