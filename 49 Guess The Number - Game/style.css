@@ -11,4 +11,66 @@ html,
 body {
   width: 100%;
   height: 100%;
+  background-color: rgb(160, 65, 160);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 550px;
+  min-height: 260px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+header {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+.message {
+  color: rgb(160, 65, 160);
+  font-size: 22px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+.control {
+  width: 150px;
+  height: 65px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+.control.first {
+  border: 2px solid #b8b8b8;
+  text-align: center;
+  font-size: 27px;
+  font-weight: 300;
+}
+
+.control.second {
+    background-color: rgb(203, 87, 203);
+    cursor: pointer;
+    font-size: 22px;
+    color: #e3e3e3;
+    transition: all .3s ease;
+}
+.control.second:hover {
+    background-color: rgb(160, 65, 160);
+    color: #fff;
+}
+
+.chance {
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 400;
 }
