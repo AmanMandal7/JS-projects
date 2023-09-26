@@ -1,0 +1,30 @@
+const input = document.querySelector("input");
+const button = document.querySelector("button");
+const message = document.querySelector(".message");
+const chance = document.querySelector(".chance");
+
+const randomNum = Math.floor(Math.random() * 100);
+console.log(randomNum);
+
+const checkResult = () => {
+    var guessedNum = input.value;
+
+    if (guessedNum < 0 || guessedNum > 100) {
+        message.style.display = 'block';
+        message.innerText = `Please enter a valid number!`
+    }
+
+    // if (guessedNum > randomNum) {
+    //     message.style.display = 'block';
+    //     message.innerText = `Your number is high!`;
+    // } else if (guessedNum < randomNum) {
+    //     message.style.display = 'block';
+    //     message.innerText = `Your number is low!`;
+    // } else if (guessedNum == randomNum) {
+    //     message.style.display = 'block';
+    //     message.innerText = `Great! You guessed the right number.`;
+    // }
+}
+
+
+button.addEventListener("click", checkResult);

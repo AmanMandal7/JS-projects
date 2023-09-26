@@ -40,9 +40,6 @@ header {
   font-size: 22px;
   display: none;
 }
-.message.active {
-    display: block;
-}
 
 .buttons {
   display: flex;
@@ -62,20 +59,20 @@ header {
   font-weight: 300;
 }
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
+      input::-webkit-inner-spin-button {
+         -webkit-appearance: none;
+      }
 
 .control.second {
-  background-color: rgb(203, 87, 203);
-  cursor: pointer;
-  font-size: 22px;
-  color: #e3e3e3;
-  transition: all 0.3s ease;
+    background-color: rgb(203, 87, 203);
+    cursor: pointer;
+    font-size: 22px;
+    color: #e3e3e3;
+    transition: all .3s ease;
 }
 .control.second:hover {
-  background-color: rgb(160, 65, 160);
-  color: #fff;
+    background-color: rgb(160, 65, 160);
+    color: #fff;
 }
 
 .chance {
