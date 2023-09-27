@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.6);
 }
 
 header {
@@ -42,6 +43,9 @@ header {
 }
 .message.active {
     display: block;
+}
+.message.disabled{
+    display: none;
 }
 
 .buttons {
@@ -65,6 +69,9 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 .control.second {
   background-color: rgb(203, 87, 203);
@@ -76,6 +83,10 @@ input::-webkit-inner-spin-button {
 .control.second:hover {
   background-color: rgb(160, 65, 160);
   color: #fff;
+}
+.control.second.disabled {
+    opacity: 0.7;
+    pointer-events: none;
 }
 
 .chance {

@@ -14,10 +14,16 @@ const randomNumber = () => {
 }
 randomNumber();
 
+if (!input.value) {
+    // button.style.pointerEvents = 'none';
+    button.classList.add("disabled");
+}
+
 const replayGame = () => {
     // message.style.display = 'none';
     // button.innerText = 'Check';
     // input.value = "";
+    // button.classList.add("disabled");
     // chances.innerText = chance.innerText = `Remaining Chance(s): ${chances}`
     // randomNumber();
     location.reload();
@@ -25,6 +31,10 @@ const replayGame = () => {
 
 const checkResult = () => {
     var guessedNum = input.value;
+    setTimeout(() => {
+        button.style.scale = "1"
+    }, 100);
+    button.style.scale = "0.93"
 
     //Decreasing the chances on every wrong guess
     chances--;
@@ -34,7 +44,7 @@ const checkResult = () => {
     if (chances > 0 && chances <= 10) {
         // Comparing the Guessed Num with Random Num and showing the Message
         if (guessedNum < 1 || guessedNum > 100) {
-            message.classList.add("active")
+            message.style.display = 'block'
             message.innerText = `Please enter a number between 1 to 100 only!`
             valid = false;
         } else {
@@ -50,9 +60,8 @@ const checkResult = () => {
                     message.style.display = 'block';
                     message.innerText = `Great! You guessed the right number.`;
                     message.style.color = 'green';
-                    button.innerText = 'Replay';
-                    button.addEventListener("click", replayGame);
                     chances = 10;
+                    button.addEventListener("click", replayGame);
                 }
             }
         }
@@ -66,5 +75,11 @@ const checkResult = () => {
     }
 }
 
+const keyUpValidate = () => {
+    button.classList.toggle("disabled", !input.value);
+    if (input.value === "") message.style.display = 'none';
+}
+
 
 button.addEventListener("click", checkResult);
+input.addEventListener("keyup", keyUpValidate);
