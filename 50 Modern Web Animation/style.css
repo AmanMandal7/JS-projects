@@ -30,7 +30,22 @@ body {
   display: block;
   padding: 0 5vw;
   height: 5vw;
-  background-color: red;
   font-size: 3vw;
   font-weight: 700;
+}
+
+.frame {
+  overflow: hidden;
+  height: 5vw;
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 2vw;
+  height: 2vw;
+  background-color: rgb(14, 36, 104);
 }
