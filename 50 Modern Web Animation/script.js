@@ -12,14 +12,27 @@ window.addEventListener('mousemove', function (dets) {
 
 frame.addEventListener("mousemove", function (dets) {
     gsap.to(circle, {
-        scale: 4,
+        scale: 8,
         duration: .1,
         ease: Power4
+    })
+
+    gsap.to(".frame span", {
+        color: "#fff",
+        y: "-5vw",
+        duration: .3
+        
     })
 })
 
 frame.addEventListener("mouseleave", function (dets) {
     gsap.to(circle, {
         scale: 1
+    })
+
+    gsap.to(".frame span", {
+        color: '#000',
+        y: 0,
+        duration: .4
     })
 })

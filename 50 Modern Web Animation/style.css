@@ -26,6 +26,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   text-align: center;
   display: block;
   padding: 0 5vw;
@@ -35,12 +36,15 @@ body {
 }
 
 .frame {
+  position: relative;
+  z-index: 2;
   overflow: hidden;
   height: 5vw;
 }
 
 .circle {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   pointer-events: none;
