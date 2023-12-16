@@ -48,4 +48,5 @@ body {
   width: 2vw;
   height: 2vw;
   background-color: rgb(14, 36, 104);
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
 }
